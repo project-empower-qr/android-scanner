@@ -101,15 +101,11 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
 
-        // read parameters from the intent used to launch the activity.
-        boolean autoFocus = getIntent().getBooleanExtra(AutoFocus, false);
-        boolean useFlash = getIntent().getBooleanExtra(UseFlash, false);
-
         // Check for the camera permission before accessing the camera.  If the
         // permission is not granted yet, request permission.
         int rc = ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         if (rc == PackageManager.PERMISSION_GRANTED) {
-            createCameraSource(autoFocus, useFlash);
+            createCameraSource(true, false);
         } else {
             requestCameraPermission();
         }
