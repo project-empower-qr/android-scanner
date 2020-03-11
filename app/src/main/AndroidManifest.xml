@@ -23,7 +23,7 @@
             android:value="barcode" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".BarcodeCaptureActivity"
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +32,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".BarcodeCaptureActivity"
-            android:label="Read Barcode"/>
     </application>
 
 </manifest>
