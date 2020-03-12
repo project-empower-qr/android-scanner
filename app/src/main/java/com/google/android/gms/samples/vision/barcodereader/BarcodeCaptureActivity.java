@@ -34,15 +34,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.samples.vision.barcodereader.ui.camera.CameraSource;
 import com.google.android.gms.samples.vision.barcodereader.ui.camera.CameraSourcePreview;
 
@@ -75,16 +71,9 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     // permission request codes need to be < 256
     private static final int RC_HANDLE_CAMERA_PERM = 2;
 
-    // constants used to pass extra data in the intent
-    public static final String BarcodeObject = "Barcode";
-
     private CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
     private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
-
-    // helper objects for detecting taps and pinches.
-    private ScaleGestureDetector scaleGestureDetector;
-    private GestureDetector gestureDetector;
 
     private TextToSpeech greeting;
 
